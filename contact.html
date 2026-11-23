@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PW Home Health - Prince William County</title>
+    <meta name="description" content="Get in touch with PW Home Health for free consultation, quotes, and personalized care planning in Prince William County.">
+    <link rel="canonical" href="https://prince-william-home-healthcare.com/contact/">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-[#2E8B57]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        <circle cx="12" cy="12" r="3" fill="#97BC62"/>
+                    </svg>
+                    <span class="text-2xl font-bold text-[#2E8B57]">PW Home Health</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-[#2E8B57] font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-[#2E8B57] font-medium">Services</a>
+                    <a href="/qualifications" class="text-gray-700 hover:text-[#2E8B57] font-medium">Qualifications</a>
+                    <a href="/faq" class="text-gray-700 hover:text-[#2E8B57] font-medium">FAQ</a>
+                    <a href="/contact" class="bg-[#2E8B57] text-white px-6 py-3 rounded-full">Contact Us</a>
+                </div>
+                <button class="md:hidden text-gray-700 text-2xl" onclick="toggleMobileMenu()">
+                    &#9776;
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="/" class="block py-3 text-gray-700">Home</a>
+                <a href="#services" class="block py-3 text-gray-700">Services</a>
+                <a href="/qualifications" class="block py-3 text-gray-700">Qualifications</a>
+                <a href="/faq" class="block py-3 text-gray-700">FAQ</a>
+                <a href="/contact" class="block py-3 bg-[#2E8B57] text-white">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-[#2E8B57] to-[#1E6B42] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
+            <p class="mt-4 text-xl text-gray-200">Get a Free Quote & Schedule Your Assessment</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2E8B57] mb-6">Send Us a Message</h2>
+                    
+                    <form id="contact-form" class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8B57] focus:border-transparent transition">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(703) 555-1234" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8B57] focus:border-transparent transition">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8B57] focus:border-transparent transition">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8B57] focus:border-transparent transition">
+                                <option value="">Select a service</option>
+                                <option value="personal-care">Personal Care</option>
+                                <option value="medication-management">Medication Management</option>
+                                <option value="post-surgical">Post-Surgical Recovery</option>
+                                <option value="companion-care">Companion Care</option>
+                                <option value="respite-care">Respite Care</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">How Can We Help?</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your needs... we're here to help!" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8B57] focus:border-transparent transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-[#2E8B57] text-white px-6 py-4 rounded-lg font-bold hover:bg-[#1E6B42] transition cta-button">
+                            Get Free Quote & Schedule Assessment
+                        </button>
+                        
+                        <!-- Privacy Notice -->
+                        <p class="text-sm text-gray-500">
+                            We respect your privacy. Your information will never be shared with third parties without consent.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2E8B57] mb-6">Contact Information</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <a href="tel:7035551234" class="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-green-50 transition">
+                            <div class="w-12 h-12 bg-[#2E8B57]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#2E8B57]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.116l-2.217 1.75a1 1 0 01-1.298-1.298L6.5 9.164a1 1 0 011.116-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-3a2 2 0 01-2-2v-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Call Us</h3>
+                                <p class="text-2xl font-bold text-[#2E8B57]">(703) 555-1234</p>
+                                <p class="text-gray-600 mt-1">Mon-Fri: 8AM - 8PM<br>Sat-Sun: 9AM - 6PM</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:info@pwhomehealth.com" class="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-green-50 transition">
+                            <div class="w-12 h-12 bg-[#2E8B57]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#2E8B57]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.72 0L21 8M21 19a2 2 0 00-2-2H7a2 2 0 00-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Email Us</h3>
+                                <p class="text-xl font-bold text-[#2E8B57]">info@pwhomehealth.com</p>
+                                <p class="text-gray-600 mt-1">We respond within 2 hours during business hours</p>
+                            </div>
+                        </a>
+
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-green-50 transition">
+                            <div class="w-12 h-12 bg-[#2E8B57]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#2E8B57]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Service Areas</h3>
+                                <p class="text-gray-700">Prince William County, VA</p>
+                                <ul class="mt-2 text-gray-600 space-y-1">
+                                    <li>Manassas & Manassas Park</li>
+                                    <li>Fairfax Station & Brent</li>
+                                    <li>Bull Run & Haymarket</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-green-50 transition">
+                            <div class="w-12 h-12 bg-[#2E8B57]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#2E8B57]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Operating Hours</h3>
+                                <p class="text-gray-700">Available 24/7 for emergencies</p>
+                                <p class="text-gray-600 mt-2">
+                                    <span class="font-medium">Assessments:</span> 8:00 AM - 8:00 PM<br>
+                                    <span class="font-medium">Admissions:</span> Mon-Fri, 9:00 AM - 5:00 PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Notice -->
+                    <div class="mt-8 bg-red-50 rounded-xl p-6 border border-red-200">
+                        <h3 class="text-lg font-bold text-red-800 mb-2">Emergency?</h3>
+                        <p class="text-red-700">
+                            For medical emergencies, please call 911 immediately. Our team is available 
+                            around the clock to assist with non-emergency care needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-br from-[#2E8B57] to-[#1E6B42] text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Schedule your free home assessment today. Our licensed assessors will visit your 
+                home and create a personalized care plan tailored to your needs.
+            </p>
+            <a href="#contact" class="bg-white text-[#2E8B57] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition inline-block cta-button">
+                Schedule Free Assessment Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PW Home Health</h3>
+                    <p class="text-gray-400">Professional home healthcare services in Prince William County, Virginia.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/" class="hover:text-white">Home</a></li>
+                        <li><a href="#services" class="hover:text-white">Services</a></li>
+                        <li><a href="/qualifications" class="hover:text-white">Qualifications</a></li>
+                        <li><a href="/faq" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Personal Care</li>
+                        <li>Medication Management</li>
+                        <li>Post-Surgical Care</li>
+                        <li>Companion & Respite Care</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">Phone: (703) 555-1234</p>
+                    <p class="text-gray-400 mb-2">Email: info@pwhomehealth.com</p>
+                    <p class="text-gray-400">Licensed in Prince William County, VA</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2024 PW Home Health Services. All rights reserved.</p>
+                <p class="mt-2">Licensed by Virginia Department of Health</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! Our admissions team will contact you within 2 hours during business hours to schedule your free assessment.');
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
